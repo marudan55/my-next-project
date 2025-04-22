@@ -1,16 +1,16 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import { getMemberList } from "@/app/_libs/microcms";
+import { getMembersList } from "@/app/_libs/microcms";
 export default async function Page() {
-  const data = await getMemberList();
+  const data = await getMembersList();
 
   return (
     <div className={styles.container}>
-      {data.length === 0 ? (
+      {data.contents.length === 0 ? (
         <p className={styles.empty}>メンバーが登録されていません。</p>
       ) : (
         <ul>
-          {data.map((member) => (
+          {data.contents.map((member) => (
             <li key={member.id} className={styles.list}>
               <Image
                 src={member.image.url}
