@@ -1,6 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { getMembersList } from "@/app/_libs/microcms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "メンバー",
+  description: "メンバー一覧です。",
+};
+
 export default async function Page() {
   const data = await getMembersList();
 
