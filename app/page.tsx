@@ -29,7 +29,7 @@ export default async function Home() {
       </section>
       <section className={styles.news}>
         <h2 className={styles.newsTitle}>News</h2>
-        <NewsList news={data} />
+        <NewsList news={data.contents} />
         <div className={styles.newsLink}>
           <ButtonLink href="/news">もっとみる</ButtonLink>
         </div>
