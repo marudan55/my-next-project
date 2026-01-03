@@ -48,9 +48,9 @@
 }
 
 .contentsLink {
-  position: absolute;
-  right: -40px;
-  bottom: -40px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (max-width: 640px) {

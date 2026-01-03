@@ -45,6 +45,14 @@ export const getMembersList = async (queries?: MicroCMSQueries) => {
   return listData;
 };
 
+export const getCategoryList = async (queries?: MicroCMSQueries) => {
+  const listData = await client.getList<Category>({
+    endpoint: "categories",
+    queries,
+  });
+  return listData;
+};
+
 export const getContentList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<Content>({
     endpoint: "contents",

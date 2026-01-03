@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import { getContentList } from "@/app/_libs/microcms";
-import ContentsList from "@/app/_components/ContentsList";
+import ContentList from "@/app/_components/ContentList";
 import ButtonLink from "@/app/_components/ButtonLink";
 import { TOP_CONTENTS_LIST_LIMIT } from "@/app/_constants";
 
@@ -11,6 +11,7 @@ export default async function Home() {
   const data = await getContentList({
     limit: TOP_CONTENTS_LIST_LIMIT,
   });
+  const isHaveContents = data.contents.length > 0;
 
   return (
     <>
@@ -33,10 +34,13 @@ export default async function Home() {
       </section>
       <section className={styles.contents}>
         <h2 className={styles.contentsTitle}>最新コンテンツ</h2>
-        <ContentsList contents={data.contents} />
-        <div className={styles.contentsLink}>
-          <ButtonLink href="/contents">もっとみる</ButtonLink>
-        </div>
+        <ContentList contents={data.contents} />
+
+        {isHaveContents && (
+          <div className={styles.contentsLink}>
+            <ButtonLink href="/contents">もっとみる</ButtonLink>
+          </div>
+        )}
       </section>
     </>
   );

@@ -10,9 +10,9 @@ type Props = {
   contents: Content[];
 };
 
-export default function ContentsList({ contents }: Props) {
+export default function ContentList({ contents }: Props) {
   if (contents.length === 0) {
-    return <p>コンテンツがありません。</p>;
+    return <p className={styles.noContents}>コンテンツがありません。</p>;
   }
   return (
     <ul>
@@ -49,4 +49,3 @@ export default function ContentsList({ contents }: Props) {
     </ul>
   );
 }
-

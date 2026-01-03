@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getContentsDetail } from "@/app/_libs/microcms";
+import { getContentDetail } from "@/app/_libs/microcms";
 import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
 import styles from "./page.module.css";
@@ -14,7 +14,7 @@ type Props = {
 };
 
 export default async function Page({ params, searchParams }: Props) {
-  const data = await getContentsDetail(params.slug, {
+  const data = await getContentDetail(params.slug, {
     draftKey: searchParams.dk,
   }).catch(notFound);
 

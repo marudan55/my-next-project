@@ -30,6 +30,11 @@
   gap: 16px;
 }
 
+.noContents {
+  text-align: center;
+  padding: 30px 0;
+}
+
 @media (max-width: 640px) {
   .link {
     display: block;
@@ -51,4 +56,3 @@
     gap: 16px;
   }
 }
-
