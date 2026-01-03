@@ -7,10 +7,10 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function NewsLayout({ children }: Props) {
+export default function ContentsLayout({ children }: Props) {
   return (
     <>
-      <Hero title="News" sub="ニュース" />
+      <Hero title="Contents" sub="コンテンツ" />
       <Sheet>{children}</Sheet>
     </>
   );

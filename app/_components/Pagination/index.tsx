@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NEWS_LIST_LIMIT } from "@/app/_constants";
+import { CONTENTS_LIST_LIMIT } from "@/app/_constants";
 import styles from "./index.module.css";
 type Props = {
   totalCount: number;
@@ -10,10 +10,10 @@ type Props = {
 export default function Pagination({
   current = 1,
   totalCount,
-  basePath = "/news",
+  basePath = "/contents",
 }: Props) {
   const pages = Array.from(
-    { length: Math.ceil(totalCount / NEWS_LIST_LIMIT) },
+    { length: Math.ceil(totalCount / CONTENTS_LIST_LIMIT) },
     (_, index) => index + 1
   );
 
