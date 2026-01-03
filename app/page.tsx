@@ -16,9 +16,9 @@ export default async function Home() {
     <>
       <section className={styles.top}>
         <div>
-          <h1 className={styles.title}>テクノロジーの力で世界を変える</h1>
+          <h1 className={styles.title}>おうちで涙活.com</h1>
           <p className={styles.description}>
-            私たちは市場をリードしているグローバルテックカンパニーです。
+            自宅で涙活を楽しめるよう、「泣ける」コンテンツを紹介しています。
           </p>
         </div>
         <Image
