@@ -1,5 +1,5 @@
-import ContentsList from "@/app/_components/ContentList";
-import { getContentsList } from "@/app/_libs/microcms";
+import ContentList from "@/app/_components/ContentList";
+import { getContentList } from "@/app/_libs/microcms";
 import { CONTENTS_LIST_LIMIT } from "@/app/_constants";
 import { notFound } from "next/navigation";
 import Pagination from "@/app/_components/Pagination";
@@ -16,7 +16,7 @@ export default async function Page({ params }: Props) {
     notFound();
   }
 
-  const { contents, totalCount } = await getContentsList({
+  const { contents, totalCount } = await getContentList({
     limit: CONTENTS_LIST_LIMIT,
     offset: (current - 1) * CONTENTS_LIST_LIMIT,
   });
@@ -27,7 +27,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <ContentsList contents={contents} />
+      <ContentList contents={contents} />
       <Pagination totalCount={totalCount} current={current} />
     </>
   );
